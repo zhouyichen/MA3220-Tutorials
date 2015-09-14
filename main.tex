@@ -1,0 +1,153 @@
+\documentclass[11pt, a4paper]{article}
+
+%%%%%%-= Package Used =-%%%%%%%%%%%%%%%%
+\usepackage[left=0.8cm,right=2.5cm,top=2.5cm,bottom=2.5cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amsfonts} %for field R,Z,Q,C
+\usepackage{amssymb}
+\usepackage{amsthm}
+%\usepackage{dsfont} %for probability P
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{tabularx}
+\pagestyle{fancy}
+\headheight 35pt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%-= Border Width =-%%%%%%%%%%%%%%%%
+\textheight 25truecm
+\topmargin -1.7truecm
+\textwidth 17.4truecm
+\oddsidemargin -0.8truecm
+\evensidemargin -0.8truecm
+\parindent=0pt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%-= Text Style =-%%%%%%%%%%%%%%%%%%
+\setlength{\parindent}{0pt}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%-= Title environment =-%%%%%%%%%%%
+%need to compile twice for the last page counter to work
+\newcommand{\heading}[7]
+{
+    \lhead{#1}
+    \chead{#2}
+    \rhead{#3}
+    \lfoot{NUS Math \LaTeX ify Proj Team}
+    \cfoot{Page\ \thepage\ of \pageref{LastPage}}
+    \rfoot{NUS Mathematics Society}
+    \begin{center}
+        NUS MATHEMATICS SOCIETY\\[0.3cm]
+				
+				\textbf{#1 \ \ #2}\\
+				#3\\
+				Version #7: \today\\[0.3cm]
+				
+				%\begin{tabular}{|p{5cm} | p{5cm} | p{5cm}|}
+				\newcolumntype{R}{>{\centering}p{5.4cm}}
+				\begin{tabularx}{\textwidth}{R R R}
+						\centering
+						%\multicolumn{2}{c}{\textbf{#1 \ \ #2}}\tabularnewline
+						%\multicolumn{2}{c}{#3 }\tabularnewline
+						%\multicolumn{2}{c}{Version #7: \today}\tabularnewline
+						%Written by & \begin{tabular}[t]{l} #4 \end{tabular}\tabularnewline
+						%Audited by & \begin{tabular}[t]{l} #5 \end{tabular}\tabularnewline
+						%Contributors & \begin{tabular}[t]{l} #6 \end{tabular}\tabularnewline
+						\textbf{Written by} & \textbf{Audited by} & \textbf{Contributors}\tabularnewline
+						\begin{tabular}[t]{c} #4 \end{tabular} & \begin{tabular}[t]{c} #5 \end{tabular} & \begin{tabular}[t]{c} #6 \end{tabular}\tabularnewline
+				\end{tabularx}
+				
+
+    \end{center}
+    \hrule height 1pt width 17.8cm
+    \vspace{0.5cm}
+}
+
+\newcommand{\finishSolutions}
+{
+		\begin{center}
+				\textbf{END OF SOLUTIONS}\\
+		\end{center}
+		\clearpage
+		\paragraph{More Where This Came From?}
+		\textit{To ensure you're getting the latest and greatest versions of our PYP solutions, kindly download directly from }\texttt{\href{http://nusmathsoc.org/\#pyp}{nusmathsoc.org/\#pyp}}\textit{.}
+		\paragraph{Any Mistakes?}
+		\textit{The \LaTeX ify Team takes great care to ensure solution accuracy. If you find any error or factual inaccuracy in our solutions, do let us know at }\texttt{\href{mailto:latexify@nusmathsoc.org}{latexify@nusmathsoc.org}}\textit{. Contributors will be credited in the next version!}
+		\paragraph{Join Us!}
+		\textit{Want to be of service to fellow students by producing beautifully typeset Past Year Paper Solutions? Enquire at }\texttt{\href{mailto:latexify@nusmathsoc.org}{latexify@nusmathsoc.org}}\textit{.}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%-= Qn environment =-%%%%%%%%%%%%%%
+\renewcommand{\labelenumi}{(\alph{enumi})}
+\renewcommand{\labelenumii}{(\roman{enumii})}
+\newenvironment{qn}[1]
+{
+    \textbf{Question #1}
+    \begin{enumerate}
+}{
+    \end{enumerate}
+    \vspace{0.2cm}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\chap}[1]
+{
+	\textbf{Chapter #1\\}
+	\newline
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\sub}[1]
+{
+    \item #1
+    \vspace{0.3cm}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\romansub}[1]
+{
+		\renewcommand{\labelenumi}{(\roman{enumi})}
+    \item #1
+    \vspace{0.3cm}
+		\renewcommand{\labelenumi}{(\alph{enumi})}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\nosub}[1]
+{
+    \item[] #1
+    \vspace{0.3cm}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\bulletsub}[1]
+{
+    \item[$\bullet$] #1
+    \vspace{0.3cm}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%need to compile twice for the last page counter to work
+
+%\heading{Module Code}{Module Title}{AY 20xx/20xx Sem x}{Writer}{Auditor}{Contributors}{Version Number}
+%\heading{MA1102}{Calculus}{AY 2013/2014 Sem 1}{Euclid of Alexandria}{Leonhard Euler}{Leonardo Fibonacci\\Carl Friedrich Gauss}{1}
+%\heading{MA1102}{Calculus}{AY 2013/2014 Sem 1}{Euclid of Alexandria}{Leonhard Euler}{--}{1}
+\heading{MA3220}{Ordinary Differential Equations}{AY 2015/2016 Sem 1}{Euclid of Alexandria}{Leonhard Euler}{Leonardo Fibonacci\\Carl Friedrich Gauss}{1}
+
+\chap{1.1}
+\input{chapter1/1.1.tex}
+
+\chap{1.2}
+
+\chap{1.3}
+
+\finishSolutions
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
